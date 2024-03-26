@@ -3,6 +3,7 @@ import { malik } from './ChatLanding';
 import ReactScrollToBottom from 'react-scroll-to-bottom';
 import '../Styles/chatpagestyle.css';
 import closeIcon from '../../assets/closeIcon.png';
+import sendLogo from '../../assets/send.png'
 
 import socketIO from 'socket.io-client';
 
@@ -21,6 +22,12 @@ const ChatPage = () => {
     socket.on('welcome', (data)=>{
       console.log(data.malik, data.message)
     })
+
+
+    socket.on('userJoined', (data) => {
+      console.log(data.malik, data.message);
+    })
+
   }, []);
 
   return (
