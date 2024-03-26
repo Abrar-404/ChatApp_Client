@@ -2,10 +2,10 @@ import '../Styles/chatpage.css';
 import '../Styles/btn2.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-let user;
+let malik;
 
 const sendUser = () => {
-  user = document.getElementById('joinInput').value;
+  malik = document.getElementById('joinInput').value;
   document.getElementById('joinInput').value = '';
 };
 
@@ -41,8 +41,11 @@ const ChatLanding = () => {
         </div>
 
         <div className="flex justify-center mt-4">
-          <Link to="/chatPage">
-            <button className="bhitu-btn2" onClick={e => !name ? e.preventDefault() : null}>
+          <Link
+            to="/chatpage"
+            onClick={e => (!name ? e.preventDefault() : null)}
+          >
+            <button className="bhitu-btn2" onClick={sendUser}>
               Submit
             </button>
           </Link>
@@ -53,4 +56,4 @@ const ChatLanding = () => {
 };
 
 export default ChatLanding;
-export { user };
+export { malik };
