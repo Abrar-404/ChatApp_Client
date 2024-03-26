@@ -6,8 +6,6 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Swal from 'sweetalert2';
 import SocialLogin from './SocialLogin';
-import { Helmet } from 'react-helmet-async';
-import ReCAPTCHA from 'react-google-recaptcha';
 import { AuthContext } from '../../../Providers/AuthProvider';
 
 const Login = () => {
