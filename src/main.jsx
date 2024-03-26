@@ -8,7 +8,8 @@ import AuthProvider from './Providers/AuthProvider';
 import Login from './Components/Pages/Login/Login';
 import Register from './Components/Pages/Register/Register';
 import Join from './Components/Join/Join';
-import Chat from './Components/Chat/Chat';
+import ChatLanding from './Components/Chat/ChatLanding';
+import ChatPage from './Components/Chat/ChatPage';
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,12 @@ const router = createBrowserRouter([
         element: <Join></Join>,
       },
       {
+        path: '/chatlanding',
+        element: <ChatLanding></ChatLanding>,
+      },
+      {
         path: '/chatPage',
-        element: <Chat></Chat>,
+        element: <ChatPage></ChatPage>,
       },
     ],
   },

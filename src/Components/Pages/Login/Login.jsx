@@ -25,7 +25,7 @@ const Login = () => {
         console.log(loggedUser);
         console.log('User created successfully');
 
-        navigate(location?.state ? location.state : '/chatPage');
+        navigate(location?.state ? location.state : '/chatlanding');
 
         Swal.fire({
           title: 'User Login Successful.',
