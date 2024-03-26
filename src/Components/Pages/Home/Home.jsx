@@ -1,7 +1,9 @@
+import Interface from "../../Interface/Interface";
+
 const Home = () => {
   return (
     <div>
-      <h1>this is home</h1>
+      <Interface></Interface>
     </div>
   );
 };
