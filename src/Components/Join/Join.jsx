@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HashLoader } from 'react-spinners';
 
-
+import '../Styles/Buttons.css';
 
 // import socketIO from 'socket.io-client';
 
@@ -26,7 +26,7 @@ const Join = () => {
         </div>
 
         {/* Button */}
-        <div className='flex justify-center mx-auto items-center gap-20'>
+        <div className="flex justify-center mx-auto items-center gap-10 mt-10">
           <Link to="/login">
             <button className="bhitu-btn">Login</button>
           </Link>

@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 
 import SocialLogin from '../Login/SocialLogin';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 const Register = () => {
   const { googleRegister, registerUser, updateUserProfile } =
@@ -100,7 +101,7 @@ const Register = () => {
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
               <h1 className="text-5xl mt-5 text-center font-bold text-green-500 mb-5 font-mono">
-                Register To Titans Arena
+                Register To JITTER
               </h1>
 
               <div className="flex  flex-col rounded-md justify-center items-center border border-green-400 lg:p-4 -mx-1 lg:mx-0 ">
@@ -238,14 +239,14 @@ const Register = () => {
                 </div>
               </div>
             </div>
-            {/* <div className="text-center lg:text-left">
+            <div className="text-center lg:text-left">
               <Player
                 className=" rounded-lg w-[400px] h-[400px] sm:w-[500px] sm:h-[500px]"
                 autoplay
                 loop
                 src="https://assets6.lottiefiles.com/packages/lf20_nc1bp7st.json"
               ></Player>
-            </div> */}
+            </div>
           </div>
         </div>
         <ToastContainer />

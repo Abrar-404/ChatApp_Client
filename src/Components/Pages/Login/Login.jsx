@@ -72,7 +72,7 @@ const Login = () => {
         <div className="hero-content flex-col my-20 lg:flex-row-reverse">
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
             <h1 className="text-5xl mb-5 mt-5 text-center font-mono font-bold text-green-500">
-              Login To Titans Arena
+              Login To JITTER
             </h1>
 
             <div className="flex flex-col justify-center items-center rounded-md border-green-500 border lg:p-3 -mx-1 lg:mx-0 ">
