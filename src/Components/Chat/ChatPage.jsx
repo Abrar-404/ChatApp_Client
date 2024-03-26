@@ -16,7 +16,7 @@ let socket;
 
 const ChatPage = () => {
   const [id, setId] = useState('');
-  const [massages, setMessages] = useState([1, 2, 3, 4]);
+  const [massages, setMessages] = useState([]);
 
   const send = () => {
     const message = document.getElementById('chatInput').value;
