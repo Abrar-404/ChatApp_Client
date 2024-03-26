@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { malik } from './ChatLanding';
 
 import socketIO from 'socket.io-client';
@@ -5,12 +6,13 @@ import socketIO from 'socket.io-client';
 const ENDPOINT = 'http://localhost:5000/';
 
 const ChatPage = () => {
-
   const socket = socketIO(ENDPOINT, { transports: ['websocket'] });
-  
-  socket.on('connect', () => {
-    alert('connected')
-  })
+
+  useEffect(() => {
+    socket.on('connect', () => {
+      alert('connected');
+    });
+  }, []);
 
   return (
     <div>
