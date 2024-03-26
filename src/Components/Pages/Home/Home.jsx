@@ -1,9 +1,10 @@
-import Interface from "../../Interface/Interface";
+import Join from "../../Join/Join";
+
 
 const Home = () => {
   return (
     <div>
-      <Interface></Interface>
+      <Join></Join>
     </div>
   );
 };

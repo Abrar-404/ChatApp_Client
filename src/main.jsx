@@ -7,6 +7,7 @@ import Home from './Components/Pages/Home/Home';
 import AuthProvider from './Providers/AuthProvider';
 import Login from './Components/Pages/Login/Login';
 import Register from './Components/Pages/Register/Register';
+import Join from './Components/Join/Join';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/chat',
+        element: <Join></Join>
       },
     ]
   },
