@@ -1,7 +1,9 @@
-import { RiseLoader } from "react-spinners";
+import { Link } from 'react-router-dom';
+import { HashLoader } from 'react-spinners';
+
+
 
 // import socketIO from 'socket.io-client';
-
 
 // const ENDPOINT = 'http://localhost:5000/';
 
@@ -12,9 +14,26 @@ const Join = () => {
 
   return (
     <div>
-      <div>
-        <div className="flex justify-center mx-auto my-auto mt-48">
-          <RiseLoader color="#36d7b7" />
+      <div className=" mt-48">
+        {/* Logo */}
+        <div className="flex justify-center mx-auto my-auto">
+          <HashLoader color="#36d7b7" size={90} />
+        </div>
+
+        {/* Header */}
+        <div className="flex justify-center mt-20">
+          <h1 className="font-rubik-doodle text-8xl text-[#36d7b7]">Jitter</h1>
+        </div>
+
+        {/* Button */}
+        <div className='flex justify-center mx-auto items-center gap-20'>
+          <Link to="/login">
+            <button className="bhitu-btn">Login</button>
+          </Link>
+
+          <Link to="/register">
+            <button className="bhitu-btn">Register</button>
+          </Link>
         </div>
       </div>
     </div>
