@@ -71,7 +71,13 @@ const ChatPage = () => {
        setMessages([...messages, data]);
       console.log(data.malik, data.message, data.id);
     });
-  }, []);
+
+
+    return () => {
+      socket.off()
+    }
+
+  }, [messages]);
 
   return (
     <chatpagecomp>
