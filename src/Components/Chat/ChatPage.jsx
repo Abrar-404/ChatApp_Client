@@ -16,7 +16,7 @@ let socket;
 
 const ChatPage = () => {
   const [id, setId] = useState('');
-  const [massages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([]);
 
   const send = () => {
     const message = document.getElementById('chatInput').value;
@@ -46,14 +46,17 @@ const ChatPage = () => {
     socket.emit('joined', { malik });
 
     socket.on('welcome', data => {
+      setMessages([...messages, data]);
       console.log(data.malik, data.message);
     });
 
     socket.on('userJoined', data => {
+       setMessages([...messages, data]);
       console.log(data.malik, data.message);
     });
 
     socket.on('leave', data => {
+       setMessages([...messages, data]);
       console.log(data.malik, data.message);
     });
 
@@ -65,6 +68,7 @@ const ChatPage = () => {
 
   useEffect(() => {
     socket.on('sendMessage', data => {
+       setMessages([...messages, data]);
       console.log(data.malik, data.message, data.id);
     });
   }, []);
@@ -134,9 +138,9 @@ const ChatPage = () => {
         <div className="flex justify-start mt-10">
           <div className="lg:w-1/2 md:w-[60%] w-[90%] text-start mx-auto">
             <ReactScrollToBottom className="chatBox h-[40%]">
-              {massages?.map((item, i) => (
+              {messages?.map((item, i) => (
                 <Message
-                  user={item.id === id ? '' : item.malik}
+                  malik={item.id === id ? '' : item.malik}
                   message={item.message}
                   classs={item.id === id ? 'right' : 'left'}
                 />
