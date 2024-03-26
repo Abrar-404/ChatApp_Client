@@ -1,69 +1,52 @@
-chatpage .input-container {
-  position: relative;
-}
-
-chatpage .input {
-  padding: 10px;
-  height: 40px;
-  border: 2px solid #0B2447;
-  border-top: none;
-  border-bottom: none;
-  font-size: 16px;
-  background: transparent;
-  outline: none;
-  box-shadow: 7px 7px 0px 0px #0B2447;
-  transition: all 0.5s;
-}
-
-chatpage .input:focus {
-  box-shadow: none;
-  transition: all 0.5s;
-}
-
-chatpage .label {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: #0B2447;
-  transition: all 0.5s;
-  transform: scale(0);
-  z-index: -1;
-}
-
-chatpage .input-container .topline {
-  position: absolute;
-  content: "";
-  background-color: #0B2447;
-  width: 0%;
-  height: 2px;
-  right: 0;
-  top: 0;
-  transition: all 0.5s;
-}
-
-chatpage .input-container input[type="text"]:focus ~ .topline {
-  width: 35%;
-  transition: all 0.5s;
-}
-
-chatpage .input-container .underline {
-  position: absolute;
-  content: "";
-  background-color: #0B2447;
-  width: 0%;
-  height: 2px;
-  right: 0;
-  bottom: 0;
-  transition: all 0.5s;
-}
-
-chatpage .input-container input[type="text"]:focus ~ .underline {
+.inputush {
+  color: #fff;
+  font-size: 0.9rem;
+  background-color: transparent;
   width: 100%;
-  transition: all 0.5s;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  border-bottom: var(--border-height) solid var(--border-before-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-chatpage .input-container input[type="text"]:focus ~ .label {
-  top: -10px;
-  transform: scale(1);
-  transition: all 0.5s;
+.inputush-border {
+  position: absolute;
+  background: var(--border-after-color);
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.inputush:focus {
+  outline: none;
+}
+
+.inputush:focus + .inputush-border {
+  width: 100%;
+}
+
+.form-control {
+  position: relative;
+  --width-of-input: 300px;
+}
+
+.inputush-alt {
+  font-size: 1.2rem;
+  padding-inline: 1em;
+  padding-block: 0.8em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inputush-border-alt {
+  height: 3px;
+  background: linear-gradient(90deg, #FF6464 0%, #FFBF59 50%, #47C9FF 100%);
+  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1.00);
+}
+
+.inputush-alt:focus + .inputush-border-alt {
+  width: 100%;
 }

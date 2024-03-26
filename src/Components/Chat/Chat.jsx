@@ -1,3 +1,5 @@
+import '../Styles/chatpage.css';
+
 const Chat = () => {
   return (
     <chatpage>
@@ -15,15 +17,12 @@ const Chat = () => {
           </h1>
         </div>
 
-        <div>
-          <div class="input-container">
-            <input class="input" name="text" type="text" />
-            <label class="label" for="input">
-              Enter Here
-            </label>
-            <div class="topline"></div>
-            <div class="underline"></div>
-          </div>
+        <div className="flex justify-center mx-auto mt-2">
+          <input
+            type="text"
+            className="bg-[#1D232A] border-[#ff00bf] border-2 rounded-2xl py-2 px-2"
+            placeholder="Enter Your Nickname"
+          />
         </div>
       </div>
     </chatpage>
