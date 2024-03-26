@@ -1,8 +1,6 @@
-
-
-import React, {  useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Swal from 'sweetalert2';
 import SocialLogin from './SocialLogin';
@@ -15,7 +13,6 @@ const Login = () => {
   const location = useLocation();
   const [verify, SetVerify] = useState(false);
 
-  const from = location.state?.from?.pathname || '/';
   const {
     register,
     handleSubmit,
@@ -28,7 +25,7 @@ const Login = () => {
         console.log(loggedUser);
         console.log('User created successfully');
 
-        navigate(from, { replace: true });
+        navigate(location?.state ? location.state : '/chatPage');
 
         Swal.fire({
           title: 'User Login Successful.',
