@@ -3,7 +3,9 @@ import { malik } from './ChatLanding';
 import ReactScrollToBottom from 'react-scroll-to-bottom';
 import '../Styles/chatpagestyle.css';
 import closeIcon from '../../assets/closeIcon.png';
-import sendLogo from '../../assets/send.png'
+import sendLogo from '../../assets/send.png';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import socketIO from 'socket.io-client';
 
@@ -14,24 +16,34 @@ const ChatPage = () => {
 
   useEffect(() => {
     socket.on('connect', () => {
-      alert('connected');
+      // toast('🦄 connected!', {
+      //   position: 'top-center',
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: 'dark',
+      //   transition: 'Bounce',
+      // });
+      // alert('connected');
     });
 
     socket.emit('joined', { malik });
 
-    socket.on('welcome', (data)=>{
-      console.log(data.malik, data.message)
-    })
-
-
-    socket.on('userJoined', (data) => {
+    socket.on('welcome', data => {
       console.log(data.malik, data.message);
-    })
+    });
 
+    socket.on('userJoined', data => {
+      console.log(data.malik, data.message);
+    });
   }, []);
 
   return (
     <chatpagecomp>
+      <ToastContainer />
       <div className="chatPage">
         <div className="chatContainer">
           <div className="header">
