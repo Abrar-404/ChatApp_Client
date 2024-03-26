@@ -7,8 +7,8 @@ import {
   signOut,
 } from 'firebase/auth';
 
-import { auth } from '../../../../Warclub_Project/Client/src/Config/firebase.config';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { auth } from './../Config/firebase.config';
 
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { Player } from '@lottiefiles/react-lottie-player';
+// import { Player } from '@lottiefiles/react-lottie-player';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 
@@ -238,14 +238,14 @@ const Register = () => {
                 </div>
               </div>
             </div>
-            <div className="text-center lg:text-left">
+            {/* <div className="text-center lg:text-left">
               <Player
                 className=" rounded-lg w-[400px] h-[400px] sm:w-[500px] sm:h-[500px]"
                 autoplay
                 loop
                 src="https://assets6.lottiefiles.com/packages/lf20_nc1bp7st.json"
               ></Player>
-            </div>
+            </div> */}
           </div>
         </div>
         <ToastContainer />
