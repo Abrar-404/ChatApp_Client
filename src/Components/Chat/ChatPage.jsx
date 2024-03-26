@@ -1,11 +1,8 @@
 import { useEffect } from 'react';
-import { malik} from './ChatLanding'
+import { malik } from './ChatLanding';
 import ReactScrollToBottom from 'react-scroll-to-bottom';
-import '../Styles/chatpagestyle.css'
-import closeIcon from '../../assets/closeIcon.png'
-
-
-
+import '../Styles/chatpagestyle.css';
+import closeIcon from '../../assets/closeIcon.png';
 
 import socketIO from 'socket.io-client';
 
@@ -17,11 +14,13 @@ const ChatPage = () => {
   useEffect(() => {
     socket.on('connect', () => {
       alert('connected');
+    });
+
+    socket.emit('joined', { malik });
+
+    socket.on('welcome', (data)=>{
+      console.log(data.malik, data.message)
     })
-
-
-socket.emit('joined', {})
-
   }, []);
 
   return (
@@ -35,7 +34,7 @@ socket.emit('joined', {})
               <img src={closeIcon} alt="Close" />
             </a>
           </div>
-          <ReactScrollToBottom className="chatBox">
+          {/* <ReactScrollToBottom className="chatBox">
             {messages.map((item, i) => (
               <Message
                 user={item.id === id ? '' : item.malik}
@@ -43,16 +42,16 @@ socket.emit('joined', {})
                 classs={item.id === id ? 'right' : 'left'}
               />
             ))}
-          </ReactScrollToBottom>
+          </ReactScrollToBottom> */}
           <div className="inputBox">
             <input
               onKeyPress={event => (event.key === 'Enter' ? send() : null)}
               type="text"
               id="chatInput"
             />
-            <button onClick={send} className="sendBtn">
+            {/* <button onClick={send} className="sendBtn">
               <img src={sendLogo} alt="Send" />
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
