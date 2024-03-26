@@ -1,5 +1,11 @@
 import { useEffect } from 'react';
-import { malik } from './ChatLanding';
+import { malik} from './ChatLanding'
+import ReactScrollToBottom from 'react-scroll-to-bottom';
+import '../Styles/chatpagestyle.css'
+import closeIcon from '../../assets/closeIcon.png'
+
+
+
 
 import socketIO from 'socket.io-client';
 
@@ -11,15 +17,46 @@ const ChatPage = () => {
   useEffect(() => {
     socket.on('connect', () => {
       alert('connected');
-    });
+    })
+
+
+socket.emit('joined', {})
+
   }, []);
 
   return (
-    <div>
-      <div>
-        <h1 className=" text-3xl">{malik}</h1>
+    <chatpagecomp>
+      <div className="chatPage">
+        <div className="chatContainer">
+          <div className="header">
+            <h2>Jitter</h2>
+            <a href="/">
+              {' '}
+              <img src={closeIcon} alt="Close" />
+            </a>
+          </div>
+          <ReactScrollToBottom className="chatBox">
+            {messages.map((item, i) => (
+              <Message
+                user={item.id === id ? '' : item.malik}
+                message={item.message}
+                classs={item.id === id ? 'right' : 'left'}
+              />
+            ))}
+          </ReactScrollToBottom>
+          <div className="inputBox">
+            <input
+              onKeyPress={event => (event.key === 'Enter' ? send() : null)}
+              type="text"
+              id="chatInput"
+            />
+            <button onClick={send} className="sendBtn">
+              <img src={sendLogo} alt="Send" />
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </chatpagecomp>
   );
 };
 

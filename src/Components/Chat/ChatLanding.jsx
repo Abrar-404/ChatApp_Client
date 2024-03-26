@@ -1,4 +1,4 @@
-import '../Styles/chatpage.css';
+import '../Styles/chatpageinput.css';
 import '../Styles/btn2.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
