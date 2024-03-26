@@ -9,7 +9,7 @@ import SocialLogin from '../Login/SocialLogin';
 import { AuthContext } from '../../../Providers/AuthProvider';
 
 const Register = () => {
-  const { createUser, user, updateUserData, updateUserProfile } =
+  const { googleRegister, registerUser, updateUserProfile } =
     useContext(AuthContext);
 
   const [error, setErr] = useState('');
@@ -31,7 +31,7 @@ const Register = () => {
     if (password !== confirmPassword) {
       setErr('Passwords do not match');
     } else {
-      createUser(data.email, data.password)
+      registerUser(data.email, data.password)
         .then(() => {
           updateUserProfile(data.name, data.photoUrl)
             .then(() => {
@@ -43,7 +43,7 @@ const Register = () => {
                 photoURL: data.photoUrl,
               };
 
-              fetch('https://titans-arena-server.vercel.app/users', {
+              fetch('http://localhost:5000/users', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

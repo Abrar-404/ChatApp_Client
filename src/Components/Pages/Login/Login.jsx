@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import Swal from 'sweetalert2';
 import SocialLogin from './SocialLogin';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 const Login = () => {
   const { loginUser, user, passwordReset } = useContext(AuthContext);
