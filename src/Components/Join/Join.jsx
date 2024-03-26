@@ -27,13 +27,13 @@ const Join = () => {
 
         {/* Button */}
         <div className="flex justify-center mx-auto items-center gap-10 mt-10">
-          <Link to="/login">
+          <Link to="/chatlanding">
             <button className="bhitu-btn">Login</button>
           </Link>
 
-          <Link to="/register">
+          {/* <Link to="/register">
             <button className="bhitu-btn">Register</button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
