@@ -12,22 +12,22 @@ import socketIO from 'socket.io-client';
 const ENDPOINT = 'http://localhost:5000/';
 
 const ChatPage = () => {
-  const socket = socketIO(ENDPOINT, { transports: ['websocket'] });
-
   useEffect(() => {
+    const socket = socketIO(ENDPOINT, { transports: ['websocket'] });
+
     socket.on('connect', () => {
-      // toast('🦄 connected!', {
+      // toast('🦄 Connected!', {
       //   position: 'top-center',
-      //   autoClose: 5000,
+      //   autoClose: 3000,
       //   hideProgressBar: false,
       //   closeOnClick: true,
-      //   pauseOnHover: true,
+      //   pauseOnHover: false,
       //   draggable: true,
       //   progress: undefined,
       //   theme: 'dark',
       //   transition: 'Bounce',
       // });
-      // alert('connected');
+      alert('Connected');
     });
 
     socket.emit('joined', { malik });
@@ -39,6 +39,15 @@ const ChatPage = () => {
     socket.on('userJoined', data => {
       console.log(data.malik, data.message);
     });
+
+    socket.on('leave', (data) => {
+      console.log(data.malik, data.message);
+    })
+
+    return () => {
+      socket.emit('disconnected');
+      socket.off();
+    };
   }, []);
 
   return (
